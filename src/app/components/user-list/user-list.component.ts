@@ -1,3 +1,4 @@
+import { UserSummary } from './../../models/user-summary';
 import { UsersService } from './../../services/users-service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -8,8 +9,8 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  users$: Observable<string[]>;
-  users: string[];
+  users$: Observable<UserSummary[]>;
+  users: UserSummary[];
 
   constructor( private usersService: UsersService) { }
 

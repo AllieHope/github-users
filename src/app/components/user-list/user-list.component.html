@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Github Users</h1>
   <div class="list-group">
-    <a *ngFor='let user of users' href="#" class="list-group-item">
+    <a *ngFor='let user of users' routerLink="/{{user.login}}" href="#" class="list-group-item">
       <img class="profile-image" src="{{user.avatar_url}}"/>
       {{user.login}}
     </a>

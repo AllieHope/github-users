@@ -6,6 +6,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from './app.component';
 import { UsersService } from './services/users-service';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -16,15 +17,16 @@ const appRoutes: Routes = [
     path: "",
     redirectTo: "/overview",
     pathMatch: "full"
-  }
-  // ,{path: ":user", component: UserDetailComponent}
+  },
+  { path: ":user", component: UserDetailComponent }
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
