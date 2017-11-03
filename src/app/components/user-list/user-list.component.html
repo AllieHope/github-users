@@ -1,5 +1,9 @@
-<ul>
-  <li *ngFor='let user of users'>
-    {{user.login}}
-  </li>
-</ul>
+<div class="container">
+  <h1>Github Users</h1>
+  <div class="list-group">
+    <a *ngFor='let user of users' href="#" class="list-group-item">
+      <img class="profile-image" src="{{user.avatar_url}}"/>
+      {{user.login}}
+    </a>
+  </div>
+</div>
