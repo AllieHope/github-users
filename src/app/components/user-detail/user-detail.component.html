@@ -1,6 +1,20 @@
 <div *ngIf="user" class="container">
-  {{user.login}}
-  {{user.name}}
-  {{user.following}}
-    <button class="btn btn-default" routerLink="/overview">Back</button>
+  <div class="page-header">
+    <img class="profile-image" src="{{user.avatar_url}}" />
+    <h3>{{user.name}} <small>{{user.login}}</small></h3>
+  </div>
+  <div class="overview-container">
+    <label>Repositories: </label><span class="badge">{{user.public_repos}}</span>
+    <label>Followers: </label><span class="badge">{{user.followers}}</span>
+    <label>Following: </label><span class="badge">{{user.following}}</span>
+  </div>
+  <div class="overview-container">
+    <p *ngIf="user.company"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>{{user.company}}</p>
+    <p *ngIf="user.location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{user.location}}</p>
+  </div>
+  <div class="overview-container">
+    <p>{{user.bio}}</p>
+  </div>
+  <button class="btn btn-default" routerLink="/overview">Back</button>
+  <a href="{{user.html_url}}" target="_blank">View on Github <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
 </div>
